@@ -18,14 +18,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/raphaabreu/nestjs-vitalsigns.git"
+    "url": "git+https://github.com/raphaabreu/nestjs-prometheus-requests.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/raphaabreu/nestjs-vitalsigns/issues"
+    "url": "https://github.com/raphaabreu/nestjs-prometheus-requests/issues"
   },
-  "homepage": "https://github.com/raphaabreu/nestjs-vitalsigns#readme",
+  "homepage": "https://github.com/raphaabreu/nestjs-prometheus-requests#readme",
   "dependencies": {
   },
   "peerDependencies": {
