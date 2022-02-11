@@ -1,10 +1,5 @@
 import promClient from 'prom-client';
-import {
-  CallHandler,
-  ExecutionContext,
-  Injectable,
-  NestInterceptor,
-} from '@nestjs/common';
+import { CallHandler, ExecutionContext, Injectable, NestInterceptor } from '@nestjs/common';
 import { catchError, Observable, tap, throwError } from 'rxjs';
 
 @Injectable()
@@ -21,6 +16,23 @@ export class PrometheusInterceptor implements NestInterceptor {
     labelNames: ['handler', 'controller', 'error'],
   });
 
+  static registerServiceInfo(serviceInfo: { domain: string; name: string; version: string }): PrometheusInterceptor {
+    new promClient.Gauge({
+      name: 'nestjs_info',
+      help: 'NestJs service version info',
+      labelNames: ['domain', 'name', 'version'],
+    }).set(
+      {
+        domain: serviceInfo.domain,
+        name: `${serviceInfo.domain}.${serviceInfo.name}`,
+        version: serviceInfo.version,
+      },
+      1,
+    );
+
+    return new PrometheusInterceptor();
+  }
+
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
     const labels = {
       controller: context.getClass().name,
@@ -35,7 +47,7 @@ export class PrometheusInterceptor implements NestInterceptor {
         stopTimer();
         this.failureCounter.inc({ ...labels, error: err.message || err });
         return throwError(err);
-      })
+      }),
     );
   }
 }
