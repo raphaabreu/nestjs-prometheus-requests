@@ -8,7 +8,7 @@ export class PrometheusInterceptor implements NestInterceptor {
     name: 'nestjs_requests',
     help: 'NestJs requests - duration in seconds',
     labelNames: ['handler', 'controller'],
-    buckets: [0.0001, 0.001, 0.01, 0.1, 0.25, 0.5, 1, 2.5, 5, 10],
+    buckets: [0.0001, 0.001, 0.005, 0.01, 0.025, 0.05, 0.075, 0.09, 0.1, 0.25, 0.5, 1, 2.5, 5, 10],
   });
   private readonly failureCounter = new promClient.Counter({
     name: 'nestjs_requests_failed_count',
