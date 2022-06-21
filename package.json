@@ -1,6 +1,6 @@
 {
   "name": "@raphaabreu/nestjs-prometheus-requests",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Prometheus instrumentation of requests for NestJS",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
