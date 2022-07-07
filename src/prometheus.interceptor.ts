@@ -45,7 +45,7 @@ export class PrometheusInterceptor implements NestInterceptor {
       tap(() => stopTimer()),
       catchError((err) => {
         stopTimer();
-        this.failureCounter.inc({ ...labels, error: err.message || err });
+        this.failureCounter.inc({ ...labels, error: err.constructor?.name || err });
         return throwError(err);
       }),
     );
