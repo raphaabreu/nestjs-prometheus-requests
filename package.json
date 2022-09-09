@@ -1,6 +1,6 @@
 {
   "name": "@raphaabreu/nestjs-prometheus-requests",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Prometheus instrumentation of requests for NestJS",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -28,7 +28,7 @@
   "homepage": "https://github.com/raphaabreu/nestjs-prometheus-requests#readme",
   "dependencies": {},
   "peerDependencies": {
-    "@nestjs/common": "^8.0.1 || 9.0.0",
+    "@nestjs/common": "^8.0.1 || ^9.0.0",
     "prom-client": "^14.0.1"
   },
   "devDependencies": {
