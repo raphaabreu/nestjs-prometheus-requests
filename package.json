@@ -28,8 +28,8 @@
   "homepage": "https://github.com/raphaabreu/nestjs-prometheus-requests#readme",
   "dependencies": {},
   "peerDependencies": {
-    "@nestjs/common": ">=8.0.1",
-    "prom-client": ">=14.0.1"
+    "@nestjs/common": "^8.0.1 || 9.0.0",
+    "prom-client": "^14.0.1"
   },
   "devDependencies": {
     "@nestjs/common": "^8.0.1",
